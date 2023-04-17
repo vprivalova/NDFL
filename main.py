@@ -12,35 +12,35 @@ yes = ['да', 'Да', 'ДА', 'yes', 'Yes', 'YES']
 no = ['нет', 'НЕТ', 'Нет', 'No', 'NO', 'no']
 
 overall_tax = 0
-q1_residents = input('Вы являетесь налоговым резидентом РФ? \n')
+q1_residents = input(ru.Q1_RESIDENTS_TEXT)
 
 if q1_residents in yes:
 
-    q2_incomeRF = input('Вы получаете доход на территории РФ? \n')
+    q2_incomeRF = input(ru.Q2_INCOMERF_TEXT)
     if q2_incomeRF in yes:
 
-        q3_disability = input('Ваш доход является пособием по временной нетрудоспособности? \n')
+        q3_disability = input(ru.Q3_DISABILITY_TEXT)
         if q3_disability in yes:
             tax = 0.13
-            income_disability = int(input('Введите сумму данного вида дохода (в рублях): \n'))
+            income_disability = float(input(ru.INCOME_DISABILITY_TEXT))
             tax_disability = income_disability * tax
             overall_tax += tax_disability
         else:
             pass
 
-        q4_award = input('Ваш доход получен путём вознаграждения, выплачиваемого наследникам (правопреемникам) авторов произведений науки, литературы, искусства, а также вознаграждения, выплачиваемого наследникам патентообладателей изобретений, полезных моделей, промышленных образцов? \n')
+        q4_award = input(ru.Q4_AWARD_TEXT)
         if q4_award in yes:
             tax = 0.13
-            income_award = int(input('Введите сумму данного вида дохода (в рублях): \n'))
+            income_award = float(input(ru.INCOME_AWARD_TEXT))
             tax_award = income_award * tax
             overall_tax += tax_award
         else:
             pass
 
-        q5_donation = input('Ваш доход получен путём дарения недвижимого имущества, транспортных средств, акций, цифровых финансовых активов, цифровых прав, включающих одновременно цифровые финансовые активы и утилитарные цифровые права, долей, паев? \n')
+        q5_donation = input(ru.Q5_DONATION_TEXT)
         if q5_donation in yes:
             tax = 0.13
-            income_donation = int(input('Введите сумму данного вида дохода (в рублях): \n'))
+            income_donation = float(input(ru.INCOME_DONATION_TEXT))
             tax_donation = income_donation * tax
             overall_tax += tax_donation
         else:
@@ -49,7 +49,7 @@ if q1_residents in yes:
         q6_cases1 = input(ru.CASES1)
         if q6_cases1 in yes:
             tax = 0.09
-            income_cases1 = int(input('Введите сумму данного вида дохода (в рублях): \n'))
+            income_cases1 = float(input(ru.INCOME_CASES1_TEXT))
             tax_cases = income_cases1 * tax
             overall_tax += tax_cases
         else:
@@ -58,16 +58,16 @@ if q1_residents in yes:
         q7_cases2 = input(ru.CASES2)
         if q7_cases2 in yes:
             tax = 0.35
-            income_cases2 = int(input('Введите сумму данного вида дохода (в рублях): \n'))
+            income_cases2 = float(input(ru.INCOME_CASES2_TEXT))
             tax_cases2 = income_cases2 * tax
             overall_tax += tax_cases2
         else:
             pass
 
-        q8_winner = input('Ваш доход был получен с выигрыша до 15 тыс. рублей, выплачиваемого операторами лотерей, распространителями, организаторами азартных игр, проводимых в букмекерской конторе и тотализаторе? \n')
+        q8_winner = input(ru.Q8_WINNER_TEXT)
         if q8_winner in yes:
             tax = 0.13
-            income_winner = int(input('Введите сумму данного вида дохода (в рублях): \n'))
+            income_winner = float(input(ru.INCOME_WINNER_TEXT))
             tax_winner = income_winner * tax
             overall_tax += tax_winner
         else:
@@ -75,7 +75,7 @@ if q1_residents in yes:
 
         q9_cases3 = input(ru.CASES3)
         if q9_cases3 in yes:
-            income_cases3 = int(input('Введите сумму данного вида дохода (в рублях): \n'))
+            income_cases3 = float(input(ru.INCOME_CASES3_TEXT))
             if income_cases3 <= 5000000:
                 tax = 0.13
                 tax_cases3 = income_cases3 * tax
@@ -89,14 +89,13 @@ if q1_residents in yes:
 
 
 else:
-    q2_incomeRF = input('Вы получаете доход на территории РФ? \n')
+    q2_incomeRF = input(ru.Q2_INCOMERF_TEXT)
 
     if q2_incomeRF in yes:
-        q10_dividends = input('Вы получаете доход в виде дивидендов от долевого участия в деятельности российских организаций и выплат, не связанных с выкупом цифровых финансовых активов? \n')
-
+        q10_dividends = input(ru.Q10_DIVIDENDS_TEXT)
         if q10_dividends in yes:
             tax = 0.15
-            income_dividends = int(input('Введите сумму данного вида дохода (в рублях): \n'))
+            income_dividends = float(input(ru.INCOME_DIVIDENDS_TEXT))
             tax_dividends = income_dividends * tax
             overall_tax += tax_dividends
         else:
@@ -104,7 +103,7 @@ else:
 
         q11_labour = input(ru.LABOUR)
         if q11_labour in yes:
-            income_labour = int(input('Введите сумму данного вида дохода (в рублях): \n'))
+            income_labour = float(input(ru.INCOME_LABOUR_TEXT))
 
             if income_labour <= 5000000:
                 tax = 0.13
@@ -117,9 +116,9 @@ else:
         else:
             pass
 
-        q12_deposit = input('Вы получали доход в виде процентов по вкладам (остаткам на счетах) в банках, находящихся на территории Российской Федерации? \n')
+        q12_deposit = input(ru.Q12_DEPOSIT_TEXT)
         if q12_deposit in yes:
-            income_deposit = int(input('Введите сумму данного вида дохода (в рублях): \n'))
+            income_deposit = float(input(ru.INCOME_DEPOSIT_TEXT))
 
             if income_deposit <= 5000000:
                 tax = 0.13
@@ -132,10 +131,10 @@ else:
         else:
             pass
 
-        q13_other = input('У вас есть иные доходы на территории РФ? \n')
+        q13_other = input(ru.Q13_OTHER_TEXT)
         if q13_other in yes:
             tax = 0.30
-            income_other = int(input('Введите сумму данного вида дохода (в рублях): \n'))
+            income_other = float(input(ru.INCOME_OTHER_TEXT))
             tax_other = income_other * tax
             overall_tax += tax_other
         else:
@@ -144,4 +143,4 @@ else:
     else:
         overall_tax = 0
 
-print('Общая сумма налога, которую вам необходимо заплатить: ', overall_tax)
+print(ru.TOTAL_TEXT, overall_tax)

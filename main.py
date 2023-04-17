@@ -1,8 +1,8 @@
 """
-Khludina Ksenia
-Nizovtseva Anastasia
-Privalova Viktoria
-Fedotova Tatiana
+Khludina Ksenia 91
+Nizovtseva Anastasia 91
+Privalova Viktoria 91
+Fedotova Tatiana 91
 """
 
 import ru_local as ru

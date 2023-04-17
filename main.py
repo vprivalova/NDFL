@@ -92,9 +92,9 @@ else:
     q2_incomeRF = input('Вы получаете доход на территории РФ? \n')
 
     if q2_incomeRF in yes:
-        q17_dividends = input('Вы получаете доход в виде дивидендов от долевого участия в деятельности российских организаций и выплат, не связанных с выкупом цифровых финансовых активов? \n')
+        q10_dividends = input('Вы получаете доход в виде дивидендов от долевого участия в деятельности российских организаций и выплат, не связанных с выкупом цифровых финансовых активов? \n')
 
-        if q17_dividends in yes:
+        if q10_dividends in yes:
             tax = 0.15
             income_dividends = int(input('Введите сумму данного вида дохода (в рублях): \n'))
             tax_dividends = income_dividends * tax
@@ -102,8 +102,8 @@ else:
         else:
             pass
 
-        q18_labour = input(ru.LABOUR)
-        if q18_labour in yes:
+        q11_labour = input(ru.LABOUR)
+        if q11_labour in yes:
             income_labour = int(input('Введите сумму данного вида дохода (в рублях): \n'))
 
             if income_labour <= 5000000:
@@ -117,8 +117,8 @@ else:
         else:
             pass
 
-        q19_deposit = input('Вы получали доход в виде процентов по вкладам (остаткам на счетах) в банках, находящихся на территории Российской Федерации? \n')
-        if q19_deposit in yes:
+        q12_deposit = input('Вы получали доход в виде процентов по вкладам (остаткам на счетах) в банках, находящихся на территории Российской Федерации? \n')
+        if q12_deposit in yes:
             income_deposit = int(input('Введите сумму данного вида дохода (в рублях): \n'))
 
             if income_deposit <= 5000000:
@@ -132,8 +132,8 @@ else:
         else:
             pass
 
-        q20_other = input('У вас есть иные доходы на территории РФ? \n')
-        if q20_other in yes:
+        q13_other = input('У вас есть иные доходы на территории РФ? \n')
+        if q13_other in yes:
             tax = 0.30
             income_other = int(input('Введите сумму данного вида дохода (в рублях): \n'))
             tax_other = income_other * tax

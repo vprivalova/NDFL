@@ -22,7 +22,7 @@ if q1_residents in yes:
         q3_disability = input(ru.Q3_DISABILITY_TEXT)
         if q3_disability in yes:
             tax = 0.13
-            income_disability = float(input(ru.INCOME_DISABILITY_TEXT))
+            income_disability = float(input(ru.INCOME_TEXT))
             tax_disability = income_disability * tax
             overall_tax += tax_disability
         else:
@@ -31,7 +31,7 @@ if q1_residents in yes:
         q4_award = input(ru.Q4_AWARD_TEXT)
         if q4_award in yes:
             tax = 0.13
-            income_award = float(input(ru.INCOME_AWARD_TEXT))
+            income_award = float(input(ru.INCOME_TEXT))
             tax_award = income_award * tax
             overall_tax += tax_award
         else:
@@ -40,7 +40,7 @@ if q1_residents in yes:
         q5_donation = input(ru.Q5_DONATION_TEXT)
         if q5_donation in yes:
             tax = 0.13
-            income_donation = float(input(ru.INCOME_DONATION_TEXT))
+            income_donation = float(input(ru.INCOME_TEXT))
             tax_donation = income_donation * tax
             overall_tax += tax_donation
         else:
@@ -49,7 +49,7 @@ if q1_residents in yes:
         q6_cases1 = input(ru.CASES1)
         if q6_cases1 in yes:
             tax = 0.09
-            income_cases1 = float(input(ru.INCOME_CASES1_TEXT))
+            income_cases1 = float(input(ru.INCOME_TEXT))
             tax_cases = income_cases1 * tax
             overall_tax += tax_cases
         else:
@@ -58,7 +58,7 @@ if q1_residents in yes:
         q7_cases2 = input(ru.CASES2)
         if q7_cases2 in yes:
             tax = 0.35
-            income_cases2 = float(input(ru.INCOME_CASES2_TEXT))
+            income_cases2 = float(input(ru.INCOME_TEXT))
             tax_cases2 = income_cases2 * tax
             overall_tax += tax_cases2
         else:
@@ -67,7 +67,7 @@ if q1_residents in yes:
         q8_winner = input(ru.Q8_WINNER_TEXT)
         if q8_winner in yes:
             tax = 0.13
-            income_winner = float(input(ru.INCOME_WINNER_TEXT))
+            income_winner = float(input(ru.INCOME_TEXT))
             tax_winner = income_winner * tax
             overall_tax += tax_winner
         else:
@@ -75,7 +75,7 @@ if q1_residents in yes:
 
         q9_cases3 = input(ru.CASES3)
         if q9_cases3 in yes:
-            income_cases3 = float(input(ru.INCOME_CASES3_TEXT))
+            income_cases3 = float(input(ru.INCOME_TEXT))
             if income_cases3 <= 5000000:
                 tax = 0.13
                 tax_cases3 = income_cases3 * tax
@@ -84,6 +84,24 @@ if q1_residents in yes:
                 tax = 0.15
                 tax_cases3 = income_cases3 * tax
                 overall_tax = overall_tax + tax_cases3 + 650000
+        else:
+            pass
+    else:
+        q14_cases4 = input(ru.CASES4)
+        if q14_cases4 in yes:
+            tax = 0.13
+            income_cases4 = float(input(ru.INCOME_TEXT))
+            tax_cases4 = income_cases4 * tax
+            overall_tax += tax_cases4
+        else:
+            pass
+
+        q15_cases5 = input(ru.CASES5)
+        if q15_cases5 in yes:
+            tax = 0.13
+            income_cases5 = float(input(ru.INCOME_TEXT))
+            tax_cases5 = income_cases5 * tax
+            overall_tax += tax_cases5
         else:
             pass
 
@@ -95,7 +113,7 @@ else:
         q10_dividends = input(ru.Q10_DIVIDENDS_TEXT)
         if q10_dividends in yes:
             tax = 0.15
-            income_dividends = float(input(ru.INCOME_DIVIDENDS_TEXT))
+            income_dividends = float(input(ru.INCOME_TEXT))
             tax_dividends = income_dividends * tax
             overall_tax += tax_dividends
         else:
@@ -103,7 +121,7 @@ else:
 
         q11_labour = input(ru.LABOUR)
         if q11_labour in yes:
-            income_labour = float(input(ru.INCOME_LABOUR_TEXT))
+            income_labour = float(input(ru.INCOME_TEXT))
 
             if income_labour <= 5000000:
                 tax = 0.13
@@ -118,7 +136,7 @@ else:
 
         q12_deposit = input(ru.Q12_DEPOSIT_TEXT)
         if q12_deposit in yes:
-            income_deposit = float(input(ru.INCOME_DEPOSIT_TEXT))
+            income_deposit = float(input(ru.INCOME_TEXT))
 
             if income_deposit <= 5000000:
                 tax = 0.13
@@ -134,7 +152,7 @@ else:
         q13_other = input(ru.Q13_OTHER_TEXT)
         if q13_other in yes:
             tax = 0.30
-            income_other = float(input(ru.INCOME_OTHER_TEXT))
+            income_other = float(input(ru.INCOME_TEXT))
             tax_other = income_other * tax
             overall_tax += tax_other
         else:
@@ -143,4 +161,4 @@ else:
     else:
         overall_tax = 0
 
-print(ru.TOTAL_TEXT, overall_tax)
+print(ru.TOTAL_TEXT, round(overall_tax, 2))
